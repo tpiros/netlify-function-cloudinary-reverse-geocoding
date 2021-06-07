@@ -59,6 +59,7 @@ module.exports.handler = async (event, context) => {
         if (foundDarkColours) {
           colour = 'white';
         }
+
         const latlng = convert(lat, lng);
         const response = await (
           await fetch(
@@ -78,6 +79,8 @@ module.exports.handler = async (event, context) => {
             font_weight: 'bold',
             text: `Location: ${location}`,
           },
+          gravity: 'north',
+          y: 40,
           color: colour,
           transformation: [
             {
